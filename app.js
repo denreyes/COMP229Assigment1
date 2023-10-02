@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -8,6 +9,9 @@ app.use(express.static(__dirname + '/public'));
 
 // Favicon
 app.use('/favicon.ico', express.static('images/favicon.ico'));
+
+// Parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // Routes
 app.get('/', (req, res) => {
