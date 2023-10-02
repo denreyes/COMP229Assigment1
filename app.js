@@ -1,11 +1,46 @@
-const express = require('express');
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
 const bodyParser = require('body-parser');
-const app = express();
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+
+var app = express();
 const port = process.env.PORT || 3000;
 
-// Middleware
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(express.static(__dirname + '/public'));
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
+
+module.exports = app;
 
 // Favicon
 app.use('/favicon.ico', express.static('images/favicon.ico'));
@@ -13,39 +48,6 @@ app.use('/favicon.ico', express.static('images/favicon.ico'));
 // Parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Routes
-app.get('/', (req, res) => {
-    const missionStatement = "Delivering quality web solutions.";
-    res.render('home', { missionStatement });
-});
-
-app.get('/about', (req, res) => {
-    const fullName = "Your Full Name";
-    const aboutParagraph = "I am a dedicated and passionate web developer with a strong foundation in web technologies. My goal is to create beautiful, functional, and user-friendly websites and web applications.";
-  
-    res.render('about', { fullName, aboutParagraph });
-});
-
-app.get('/projects', (req, res) => {
-    res.render('projects');
-});
-
-app.get('/services', (req, res) => {
-    res.render('services');
-});
-
-app.get('/contact', (req, res) => {
-    res.render('contact');
-});
-
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-
-app.post('/contact', (req, res) => {
-    const { firstName, lastName, email, message } = req.body;
-  
-    // Handle the form data (e.g., send an email, save to a database, etc.)
-  
-    res.redirect('/'); // Redirect back to the home page after form submission
-  });
