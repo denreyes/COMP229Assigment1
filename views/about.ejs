@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <title>About Me</title>
 </head>
 <body>
     <header>
         <!-- Navigation bar or header content -->
+        <%- include('partials/header') %>
     </header>
     <main>
-        About
         <!-- Main content -->
+        <h1>About Me</h1>
+        <img src="/images/profile.png" alt="Den">
+        <p><%= fullName %></p>
+        <p><%= aboutParagraph %></p>
+        <a href="/pdfs/resume.pdf" target="_blank">Resume (CV)</a>
     </main>
     <footer>
         <!-- Footer content -->
+        <%- include('partials/footer') %>
     </footer>
 </body>
 </html>

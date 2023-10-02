@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <title>Home</title>
 </head>
 <body>
     <header>
         <!-- Navigation bar or header content -->
+        <%- include('partials/header') %>
     </header>
     <main>
-        Home
         <!-- Main content -->
+        <div class="welcome">
+            <h1>Welcome to My Portfolio</h1>
+            <p><%= missionStatement %></p>
+            <a href="/about" class="btn">Learn More</a>
+        </div>
     </main>
     <footer>
         <!-- Footer content -->
+        <%- include('partials/footer') %>
     </footer>
 </body>
 </html>

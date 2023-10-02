@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <title>Contact</title>
 </head>
 <body>
     <header>
         <!-- Navigation bar or header content -->
+        <%- include('partials/header') %>
     </header>
     <main>
         Contact
         <!-- Main content -->
+        <form action="/contact" method="POST">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+          
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+          
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+          
+            <button type="submit">Submit</button>
+          </form>1
     </main>
     <footer>
         <!-- Footer content -->
