@@ -1,14 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express',
-//   missionStatement: "Delivering quality web solutions." });
-// });
-
 router.get('/', (req, res) => {
-  const missionStatement = "Delivering quality web solutions.";
+  const missionStatement = "\"Dreams won't work unless you do.\"\nTurning dreams into reality requires your active effort and commitment. Simply dreaming alone won't bring success.";
   res.render('index', { missionStatement });
 });
 

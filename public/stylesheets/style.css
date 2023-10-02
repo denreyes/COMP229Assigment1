@@ -10,9 +10,13 @@ body {
 }
 
 main {
-  padding: 50px;
+  min-height: 100vh;
 }
 
 a {
   color: #00B7FF;
+}
+
+.navbar {
+  padding: 2rem!important;
 }

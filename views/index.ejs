@@ -17,12 +17,22 @@
         <%- include('partials/header') %>
     </header>
 
-    <main>
-        <!-- Main content -->
-        <div class="welcome">
-            <h1>Welcome to My Portfolio</h1>
-            <p><%= missionStatement %></p>
-            <a href="/about" class="btn btn-warning">Learn More</a>
+    <main class="container d-flex justify-content-center align-items-center">
+
+        <div class="container">
+          <div class="row">
+            <!-- Left Column (Content) -->
+            <div class="col-md-6">
+              <h1>Welcome to My Portfolio</h1>
+              <p><%= missionStatement %></p>
+              <a href="/about" class="btn btn-warning">Learn More</a>
+            </div>
+        
+            <!-- Right Column (Image) -->
+            <div class="col-md-6">
+              <img src="https://vanschneider.com/wp-content/uploads/2020/07/rocket_standing.jpg" alt="Home Image" class="img-fluid fill-right">
+            </div>
+          </div>
         </div>
     </main>
     <footer>
