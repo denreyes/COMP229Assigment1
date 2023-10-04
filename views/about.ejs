@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +8,51 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <title>About Me</title>
 </head>
+
 <body>
     <header>
         <!-- Navigation bar or header content -->
         <%- include('partials/header') %>
     </header>
-    <main>
-        <!-- Main content -->
-        <h1>About Me</h1>
-        <img src="/images/profile.png" alt="Den">
-        <p><%= fullName %></p>
-        <p><%= aboutParagraph %></p>
-        <a href="/pdfs/resume.pdf" target="_blank">Resume (CV)</a>
+    <main class="container d-flex justify-content-center">
+
+        <div class="container">
+            <div class="row align-items-center mt-5">
+                <!-- Right Column (Image) -->
+                <div class="col-md-5">
+                    <img class="rounded img-profile" src="/images/profile.jpg" alt="Den">
+                </div>
+                <div class="col-md-6">
+                    <!-- Main content -->
+                    <h1>About Me</h1>
+                    <p>
+                        <%= fullName %>
+                    </p>
+                    <p>
+                        <%= aboutParagraph %>
+                    </p>
+                    <a href="/pdfs/resume.pdf" target="_blank" class="btn btn-warning">Resume (CV)</a>
+                </div>
+
+            </div>
+        </div>
     </main>
     <footer>
         <!-- Footer content -->
         <%- include('partials/footer') %>
     </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/about', (req, res) => {
-  const fullName = "Your Full Name";
+  const fullName = "Denisjann Reyes";
   const aboutParagraph = "I am a dedicated and passionate web developer with a strong foundation in web technologies. My goal is to create beautiful, functional, and user-friendly websites and web applications.";
 
   res.render('about', { fullName, aboutParagraph });
