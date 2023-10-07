@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 
 router.get('/about', (req, res) => {
   const fullName = "Denisjann Reyes";
-  const aboutParagraph = "I am a dedicated and passionate web developer with a strong foundation in web technologies. My goal is to create beautiful, functional, and user-friendly websites and web applications.";
+  const aboutParagraph = "My experience includes working on projects designed to assist with a wide range of functionalities, from social media feeds to delivery applications. I am adept at translating clients' instructions into tailored solutions to meet their specific needs.";
 
   res.render('about', { fullName, aboutParagraph });
 });
